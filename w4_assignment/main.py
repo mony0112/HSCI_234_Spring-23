@@ -5,9 +5,6 @@ def setup():
     p5.createCanvas(300, 300)    # 300 x 300 pixel canvas 
 
 def draw():
-    p5.createCanvas(300, 300)    # 300 x 300 pixel canvas 
-
-def draw():
     p5.background("#B0E0E6")
     hair()
     face()
@@ -21,33 +18,64 @@ def draw():
 
     #draw orange flower
     orange_flower(x=60,y=240)
-    # draw another orangeflower at smaller scale:
+    
+    # draw more orange flowers at smaller scale:
     p5.push()
     p5.translate(180, 240)  # move coordinates
     p5.scale(0.50)  # then scale
     orange_flower(x = 0, y = 0)  # draw at origin (0, 0)
     p5.pop()
+
+    p5.push()
+    p5.translate(260, 260)  # move coordinates
+    p5.scale(0.5)  # then scale
+    orange_flower(x = 0, y = 0)  # draw at origin (0, 0)
+    p5.pop()
+
     
     #draw pink flower
     pink_flower(x=270,y=200)
-    # draw another pink flower at smaller scale:
+    # draw more pink flowers at smaller scale:
     p5.push()
     p5.translate(110, 264)  # move coordinates
     p5.scale(0.50)  # then scale
     pink_flower(x = 0, y = 0)  # draw at origin (0, 0)
     p5.pop()
 
+    p5.push()
+    p5.translate(195, 284)  # move coordinates
+    p5.scale(0.40)  # then scale
+    pink_flower(x = 0, y = 0)  # draw at origin (0, 0)
+    p5.pop()
+
+    p5.push()
+    p5.translate(150, 250)  # move coordinates
+    p5.scale(0.40)  # then scale
+    pink_flower(x = 0, y = 0)  # draw at origin (0, 0)
+    p5.pop()
+
+    # draw more orange flowers at smaller scale:
+    p5.push()
+    p5.translate(152, 280)  # move coordinates
+    p5.scale(0.30)  # then scale
+    orange_flower(x = 0, y = 0)  # draw at origin (0, 0)
+    p5.pop()
+
     #draw blue flowers randomwly
-    for i in range(5): 
+    for i in range(20): 
+        p5.push()
         x = p5.random(0, 300)
         y = p5.random(200, 300)
-        blue_flower(x = 0, y = 0)
-
+        p5.translate(x, y)  # move to a random position
+        blue_flower(x = 0, y = 0)  # draw at origin (0, 0)
+        p5.pop() 
+        
     p5.text(str(p5.mouseX) + ", " + str(p5.mouseY), 10, 20)
 
 def blue_flower(x, y):
     p5.push()
     p5.translate(x, y)
+    p5.scale(0.2) 
     for i in range(15):
         p5.noStroke()
         p5.fill("#1E90FF")
