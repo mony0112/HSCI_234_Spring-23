@@ -13,10 +13,10 @@ class Pepper():
         scaleX = p5.width / self.img.width
         scaleY = p5.height / self.img.height
         p5.scale(scaleX, scaleY)  # Scale the image based on the ratio of canvas size to image size
-        p5.image(self.img, self.x, self.y)  # Draw the image
+        #p5.image(self.img, self.x, self.y)  # Draw the image
         p5.pop()  # Restore the transformation state
         
-    def draw_dots(self, num_dots = 200, dot_size = 15):
+    def draw_dots(self, num_dots = 10, dot_size = 10):
         scaleX = p5.width / self.img.width
         scaleY = p5.height / self.img.height
     
@@ -33,11 +33,12 @@ pepper = Pepper()
 
 
 def setup():
-    p5.createCanvas(300, 300) 
+    p5.createCanvas(800, 1000) 
+    p5.frameRate(50)
     print('finished setup') 
     
 def draw():
-    p5.background(255)           
+    # p5.background(255)           
     pepper.draw()
     pepper.draw_dots()
     
