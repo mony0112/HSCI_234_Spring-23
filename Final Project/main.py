@@ -33,7 +33,7 @@ pepper = Pepper()
 
 
 def setup():
-    p5.createCanvas(800, 1000) 
+    p5.createCanvas(300, 300) 
     p5.frameRate(50)
     print('finished setup') 
     
