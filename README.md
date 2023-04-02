@@ -10,3 +10,11 @@ W4
 W5
 [Robot](https:///mony0112.github.io/HSCI_234_Spring-23/w5_robot/)
 
+W7
+[Event Functions](https:///mony0112.github.io/HSCI_234_Spring-23/W7_event functions/)
+
+W8
+[OOP](https:///mony0112.github.io/HSCI_234_Spring-23/W8_OOP/)
+
+Final Project
+[Final Project](https:///mony0112.github.io/HSCI_234_Spring-23/Final Project/)
