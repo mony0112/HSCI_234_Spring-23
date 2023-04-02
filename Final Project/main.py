@@ -1,6 +1,7 @@
 import js
 p5 = js.window
 
+img1 = p5.loadImage('logo.png')
 arr = []
 
 class Pepper():
@@ -143,7 +144,8 @@ def draw():
             pepper3.draw_dots()
     else:
         p5.image(pepper.img, 0, 0, p5.width, p5.height)
-        
+        img1.resize(p5.width, p5.height)
+        p5.image(img1, 0, 0, p5.width, p5.height)
 
     
 def keyPressed(event):
