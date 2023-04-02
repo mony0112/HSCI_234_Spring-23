@@ -1,9 +1,7 @@
 import js
 p5 = js.window
 
-
 arr = []
-
 
 class Pepper():
     def __init__(self, x = 0, y = 0):
@@ -18,7 +16,9 @@ class Pepper():
         p5.scale(scaleX, scaleY)  # Scale the image based on the ratio of canvas size to image size
         p5.image(self.img, self.x, self.y)  # Draw the image
         p5.pop()  # Restore the transformation state
-        
+
+
+class DrawDots(Pepper):
     def draw_dots(self, num_dots = 10, dot_size = 10):
         scaleX = p5.width / self.img.width
         scaleY = p5.height / self.img.height
@@ -32,28 +32,23 @@ class Pepper():
             # p5.ellipse(x, y, dot_size, dot_size)
             arr.append({'x': x, 'y': y, 'color': color})
 
-
         for item in arr:
-
 
             if p5.mouseX - 50 < item['x'] < p5.mouseX + 50 and p5.mouseY - 50 < item['y'] < p5.mouseY + 50:
                 continue
-            
-            p5.stroke(5)
-            p5.noFill()
-            p5.rect(p5.mouseX - 50, p5.mouseY - 50, 100, 100)
 
+            p5.stroke('#FF3FB4')
+            p5.strokeWeight(2)
+            p5.noFill()
+            p5.rect(p5.mouseX - 50, p5.mouseY - 50, 50, 50)
 
             p5.fill(item['color'])           
             p5.noStroke()
             p5.ellipse(item['x'], item['y'], dot_size, dot_size)
 
 
-
-
-pepper = Pepper()
-
-
+pepper1 = Pepper()
+pepper2 = DrawDots()
 
 
 def setup():
@@ -63,12 +58,11 @@ def setup():
     
 def draw():
     # p5.background(255)           
-    pepper.draw()
-    pepper.draw_dots()
+    pepper1.draw()
+    pepper2.draw_dots()
     
 def keyPressed(event):
     pass 
-
 
 
 
@@ -77,8 +71,6 @@ def keyReleased(event):
     
 def mousePressed(event):
     pass
-
-
 
 
 def mouseReleased(event):
