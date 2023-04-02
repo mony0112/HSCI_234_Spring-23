@@ -86,18 +86,6 @@ class State3(Pepper):
             y = p5.random(0, self.img.height) * scaleY
             color = self.img.get(int(x / scaleX), int(y / scaleY))
 
-            # Change size and rotation based on distance from mouse position
-            dist = p5.dist(x, y, p5.mouseX, p5.mouseY)
-            size = p5.map(dist, 0, p5.width, dot_size, 0)
-            angle = p5.map(dist, 0, p5.width, 0, p5.TWO_PI)
-            p5.push()
-            p5.translate(x, y)
-            p5.rotate(angle)
-            p5.noStroke()
-            p5.fill(color)
-            p5.ellipse(0, 0, size, size)
-            p5.pop()
-
             # Change color based on y position
             if y < p5.height / 3:
                 color = p5.color('#FF3FB4')
