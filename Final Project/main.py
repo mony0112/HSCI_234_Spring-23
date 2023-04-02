@@ -132,7 +132,6 @@ def setup():
     print('finished setup') 
     
 def draw():
-    # p5.background(255)           
     pepper.draw()
 
     if (p5.keyIsPressed):
@@ -143,11 +142,12 @@ def draw():
         elif (p5.key == '3'):
             pepper3.draw_dots()
     else:
-        p5.background(255)
+        p5.image(pepper.img, 0, 0, p5.width, p5.height)
+        
 
     
 def keyPressed(event):
-    pass 
+    pass
 
 
 def keyReleased(event):
